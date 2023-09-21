@@ -13,8 +13,12 @@ export default function Table() {
 
     useEffect(() => {
         async function getDataFromApi() {
-            const responce = await axios.get(url)
-            dispatch(getData(responce.data))
+            try{
+                const responce = await axios.get(url)
+                dispatch(getData(responce.data))
+            } catch(err: any){
+                console.log(`Error occured: ${err.message}`)
+            }
         }
 
         getDataFromApi()
