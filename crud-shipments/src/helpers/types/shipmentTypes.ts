@@ -1,3 +1,7 @@
+/**
+ * types for data obtained from the API
+ */
+
 export type Status = "Shipped" | "In Transit" | "Delivered";
 
 export interface Shipment {

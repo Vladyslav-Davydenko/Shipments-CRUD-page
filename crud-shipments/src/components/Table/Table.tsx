@@ -11,6 +11,10 @@ export default function Table() {
     const dispatch = useDispatch()
     const url = "https://my.api.mockaroo.com/shipments.json?key=5e0b62d0"
 
+
+    /**
+     * Retriving data from API ans saving it into Redux store
+     */
     useEffect(() => {
         async function getDataFromApi() {
             try{
