@@ -1,0 +1,29 @@
+.btn {
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    display: inline-block;
+    border-radius: .5rem;
+    transition: all .2s;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: .2rem .3rem 1rem rgb(0, 0, 0, 0.2)
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: .05rem .1rem 1rem rgb(0, 0, 0, 0.2)
+}
+
+.btn-edit {
+    background-color: var(--edit-button-color);
+}
+
+.btn-delete{
+    background-color: var(--delete-button-color);
+}

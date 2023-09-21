@@ -1,0 +1,32 @@
+.shipments-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .shipments-table thead {
+    background-color: var(--table-header);
+    color: var(--text-head-color);
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    text-transform: uppercase;
+    text-align: start;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+  }
+
+  .shipments-table th {
+    padding: 15px 35px 15px 0;
+    text-align: start;
+  }
+
+  .shipments-table th:first-child {
+    padding: 15px 15px 15px 20px;
+    text-align: start;
+  }
+
+  .shipments-table tbody {
+    font-size: 1.1rem;
+  }
+
+
+  

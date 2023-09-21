@@ -1,0 +1,18 @@
+tbody td:first-child {
+    padding-left: 20px;
+  }
+
+.shipments-table td {
+padding-top: 10px;
+padding-bottom: 30px;
+border-bottom: 1px solid var(--border-color);
+}
+
+.shipments-table td.shipments-actions{
+  padding-block: 10px;
+}
+
+.shipments-actions{
+    display: flex;
+    gap: 1rem;
+}

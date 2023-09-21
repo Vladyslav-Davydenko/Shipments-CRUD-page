@@ -1,0 +1,33 @@
+:root{
+    --bg-color: rgb(255, 255, 255);
+    --table-header: rgb(247, 249, 252);
+    --text-head-color: rgb(181, 183, 193);
+    --text-body-color: rgb(96, 108, 135);
+    --edit-button-color: rgb(14, 205, 239);
+    --delete-button-color: rgb(245, 54, 93);
+    --border-color: rgb(236, 238, 241);
+}
+
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: white;
+    color: var(--text-body-color);
+    font-size: 0.7rem;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+input, button, select {
+    font: inherit;
+}
