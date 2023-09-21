@@ -16,8 +16,12 @@ const shipmentsSlice = createSlice({
         updateData: () => {
             console.log("Data was updated")
         },
-        deleteData: () => {
-            console.log("Data was deleted")
+        deleteData: (state, action) => {
+            const index = state.shipments.findIndex(
+                shipment => shipment.orderNo === action.payload
+            )
+            // mutable delete (immer will do everything)
+            state.shipments.splice(index, 1)
         }
     }
 })
