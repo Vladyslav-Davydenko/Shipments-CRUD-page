@@ -9,7 +9,7 @@ const initialState: ShipmentsState = {
           date: '10/16/2019',
           customer: 'NXP Semiconductors N.V.',
           trackingNo: 'TP-724057-72553473-5647860',
-          status: 'In Transit',
+          status: "'In Transit'",
           consignee: 'Koppers Holdings Inc.',
         },
         {
@@ -17,7 +17,7 @@ const initialState: ShipmentsState = {
           date: '8/20/2019',
           customer: 'Triumph Bancorp, Inc.',
           trackingNo: 'TP-011637-13598236-2700556',
-          status: 'Delivered',
+          status: "'Delivered'",
           consignee: 'Celsius Holdings, Inc.',
         },
         {
@@ -25,7 +25,7 @@ const initialState: ShipmentsState = {
           date: '7/10/2019',
           customer: 'Inter Parfums, Inc.',
           trackingNo: 'TP-065338-70937481-7664135',
-          status: 'Delivered',
+          status: "'Delivered'",
           consignee: 'Hovnanian Enterprises Inc',
         },
         {
@@ -33,12 +33,25 @@ const initialState: ShipmentsState = {
           date: '10/18/2019',
           customer: 'LATAM Airlines Group S.A.',
           trackingNo: 'TP-129236-97859281-4401097',
-          status: 'Delivered',
+          status: "'Delivered'",
           consignee: 'PowerShares FTSE RAFI US 1500 Small-Mid Portfolio',
         },
       ]
       
 }
+
+const sortByKeyACS = (key: string) => (a: any, b: any) => {
+    if (a[key] < b[key]) return -1;
+    if (a[key] > b[key]) return 1;
+    return 0;
+  };
+
+const sortByKeyDSC = (key: string) => (a: any, b: any) => {
+    if (a[key] < b[key]) return 1;
+    if (a[key] > b[key]) return -1;
+    return 0;
+  };
+
 
 const shipmentsSlice = createSlice({
     name: "shipments",
@@ -63,7 +76,31 @@ const shipmentsSlice = createSlice({
             )
             // mutable delete (immer will do everything)
             state.shipments.splice(index, 1)
-        }
+        },
+        shipmentsCustomerSort: (state, action) => {
+            if (action.payload){
+                state.shipments.sort(sortByKeyACS("customer"))
+            }
+            else {
+                state.shipments.sort(sortByKeyDSC("customer"))
+            }
+        },
+        trakingNoSort: (state, action) => {
+            if (action.payload){
+                state.shipments.sort(sortByKeyACS("trackingNo"))
+            }
+            else {
+                state.shipments.sort(sortByKeyDSC("trackingNo"))
+            }
+        },
+        statusSort: (state, action) => {
+            if (action.payload){
+                state.shipments.sort(sortByKeyACS("status"))
+            }
+            else {
+                state.shipments.sort(sortByKeyDSC("status"))
+            }
+        },
     }
 })
 
@@ -71,12 +108,15 @@ const store = configureStore({
     reducer: shipmentsSlice.reducer
 })
 
-const {getData, updateData, deleteData} = shipmentsSlice.actions
+const {getData, updateData, deleteData, shipmentsCustomerSort, trakingNoSort, statusSort} = shipmentsSlice.actions
 
 
 export{
     store,
     updateData,
     deleteData,
-    getData
+    getData,
+    shipmentsCustomerSort,
+    trakingNoSort,
+    statusSort
 }

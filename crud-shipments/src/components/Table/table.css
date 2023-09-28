@@ -27,6 +27,18 @@
   .shipments-table tbody {
     font-size: 1.1rem;
   }
+  th div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .sort-button {
+    cursor: pointer;
+  }
+
+  .sort-button:active {
+    transform: translateY(1px);
+  }
 
   
