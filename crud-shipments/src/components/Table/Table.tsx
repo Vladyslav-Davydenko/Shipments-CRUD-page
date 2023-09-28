@@ -30,7 +30,6 @@ export default function Table() {
         }
 
         getDataFromApi()
-        console.log("Yep")
     }, []) 
 
     const hanldeSortCustomer = () => {
