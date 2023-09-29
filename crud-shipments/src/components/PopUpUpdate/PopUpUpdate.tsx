@@ -62,9 +62,9 @@ export default function PopUpUpdate(props: PropsPopUp) {
                         </div><div>
                         <label htmlFor="status">Status:</label>
                         <select id="status" name="status" value={status} className="input" onChange={(e) => setStatus(e.target.value as typeof shipment.status)}>
-                            <option value="In Transit">In Transit</option>
-                            <option value="Delivered">Delivered</option>
-                            <option value="Pending">Pending</option>
+                            <option value="'In Transit'">In Transit</option>
+                            <option value="'Delivered'">Delivered</option>
+                            <option value="'Pending'">Pending</option>
                         </select>
 </div><div>
                         <label htmlFor="consignee">Consignee:</label>
